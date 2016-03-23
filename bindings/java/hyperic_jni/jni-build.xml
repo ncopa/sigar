@@ -324,6 +324,8 @@
         <compilerarg value="-O2" if="jni.optim"/>
         <compilerarg value="-g" if="jni.debug"/>
         <compilerarg value="-Wall"/>
+        <compilerarg value="-std=gnu89"/>
+        <compilerarg value="-I/usr/include/tirpc"/>
         <compilerarg value="-Werror" if="jni.werror"/>
         <compilerarg value="${jni.gccm}" if="jni.gccm"/>
         <defineset>
@@ -341,6 +343,7 @@
                 dir="${jni.dmalloc}/lib"
                 libs="dmallocth"/>
         <linkerarg value="${jni.gccm}" if="jni.gccm"/>
+	<libset libs="tirpc "/>
       </linker>
 
       <!-- Darwin -->
